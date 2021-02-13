@@ -1,0 +1,80 @@
+
+<nav class="navbar navbar-dark bg-dark">
+
+  <form action="/get" method="POST" class="container">
+
+    <div class="input-group">
+      
+      <select class="custom-select col-1" id="inputGroupSelect01">
+        <option value="ethereum" selected>ETH</option>
+        <option value="any">Any</option>
+
+      </select>
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Adr</span>
+      </div>
+      <input type="text" name="address" class="form-control " value="0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">BlockNum</span>
+      </div>
+      <input type="text" name="blocknumber" class="form-control col-1" value="9000000">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Date</span>
+      </div>
+      <input type="text" name="date" class="form-control col-2" placeholder="YYYY-MM-DD" value={{date}}>
+      <input type="text" name="page" class="form-control col-1" placeholder="Page num">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-outline-secondary text-white">Go</button>
+      </div>
+    </div>
+  </form>
+</nav>
+<div class="container mt-4">
+<table class="table table-striped table-light">
+  <thead class="thead-dark">
+    <tr>
+
+    </tr>
+    <tr>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">BlckNum</th>
+      <th scope="col">Gas Value</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each result}}
+    <tr>
+      <td>
+        {{this.from}}
+      </td>
+      <td>
+        {{this.to}}
+      </td>
+      <td>
+        {{this.blockNumber}}
+      </td>
+      <td>
+        {{this.value}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<div class="card container">
+
+      Address Balance:
+      {{balance}}
+   
+  
+</div>
+
+</div>
+
+
+
+
+
+
+
